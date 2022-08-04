@@ -1,0 +1,14 @@
+{
+    "type": "postgres",
+    "port": 5432,
+    "host": "localhost",
+    "username": "postgres",
+    "password": "Junior07.01",
+    "database": "perfil_de_colaboradores",
+    "entities": ["./src/entities/**/*{.js,.ts}"],
+    "migrations": ["./src/database/migrations/**/*{.js,.ts}"],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
+    }
+  }
+  

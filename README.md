@@ -1,6 +1,7 @@
 # Desafio_nodejs
 
 O projeto faz parte do pocesso seletivo para Desenvolvedor Node.js Júnior da SigTrans.
+
 O desafio proposto consiste na criação de um WebApp para divulgação do Perfil de
 Colaboradores dentro da empresa, onde no escopo inicial precisaremos implementar um CRUD
 (Criar /Ler /Modificar /Deletar) de Pessoas (Colaboradores) organizando por Departamentos,

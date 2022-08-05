@@ -43,10 +43,7 @@ yarn start
 ```
 **Acesse pelo o projeto endereço http://localhost:300**
 
-Subir o servidor Docker
-```
-docker-compose up -D
-```
+
 Execução das Migrations
 ```
 yarn typeorm migration:generate -n defull
@@ -56,22 +53,11 @@ yarn typeorm migration:run
 
 ## Deploy
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd dillinger
-npm i
-node app
+Subir o servidor Docker
+```
+docker-compose up -D
 ```
 
-For production environments...
-
-```sh
-npm install --production
-NODE_ENV=production node app
-```
 
 ## Serviços da API
 Os serviços disponibilizados na API são:
@@ -106,17 +92,26 @@ Os serviços disponibilizados na API são:
 
 
 REQUISITOS DO DESAFIO
+
 [X] Desenho de um diagrama de entidade relacionamento (DER)
 
+
 [X] Construir um projeto de API em Typescript utilizando de algum framework http, como Express ou NestJS
+
 [X] Utilizar banco de dados relacional (PostgreSQL) para camada de persistência, com solução demapeamento objeto relacional (ORM) Prisma ou Typeorm;
+
 [X] A API implementada deve seguir os padrões REST, utilizando de maneira coesa os verbos: GET (leitura), POST (inclusão), PUT (atualização) e DELETE (exclusão).
+
 [X] A API deve disponibilizar um CRUD das entidades COLABORADORES, GRUPO e DEPARTAMENTO,
 
 DIRERENCIAS PROPOSTO:
+
 [X] Configuração do Swagger para visualização da documentação da API;
+
 [X] Implementar parametrização para realizar filtro de busca na API de leitura utilizando o campo “nome” como cláusula.
+
 [ ] A implementação de teste de unidade (Jest) de alguns métodos
+
 [X] A implementação e preparação do projeto para deploy em container Docker
 
 

@@ -2,6 +2,7 @@ import { Router } from "express";
 import { CreateColaboradorController } from "./controller/colaboradorcontroller/CreateColaboradorContoller";
 import { DeleteColaboradorController } from "./controller/colaboradorcontroller/DeleteColaboradorController";
 import { ListColaboradorController } from "./controller/colaboradorcontroller/ListColaboradorController";
+import { ListNameColaboradorController } from "./controller/colaboradorcontroller/ListNameColaboradorController";
 import { UpdateColaboradorController } from "./controller/colaboradorcontroller/UpdateColaboradorContoller";
 import { CreateDepartamentoController } from "./controller/departamentocontroler/CreateDepartamentoContoller";
 import { DeleteDepartamentoController } from "./controller/departamentocontroler/DeleteDepartamentoController";
@@ -11,7 +12,6 @@ import { CreateGrupoController } from "./controller/grupocontroller/CreateGrupoC
 import { DeleteGrupoController } from "./controller/grupocontroller/DeleteGrupoController";
 import { ListGrupoController } from "./controller/grupocontroller/ListGrupoController";
 import { UpdateGrupoController } from "./controller/grupocontroller/UpdateGrupoController";
-import { UpdateDepartamentoService } from "./services/departamentoservice/UpdateDepartamentoService";
 
 
 
@@ -24,6 +24,7 @@ routes
     .get(new ListColaboradorController().list);
 routes.put("/colaborador/:id",new UpdateColaboradorController().update);
 routes.delete("/colaborador/:id", new DeleteColaboradorController().delete);
+routes.get("/colaborador/:name", new ListNameColaboradorController().list);
 
 
 // Rotas para Departamento:

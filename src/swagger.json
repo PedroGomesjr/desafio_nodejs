@@ -1,0 +1,279 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API CRUD: Perfil dos Colaboradores",
+        "description": "Este projeto fez parte do desafio para a vaga de Back-end Node.js",
+        "contact":{
+            "email":"pedrogomesjr0@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths":{
+        "/grupos": {
+            "post": {
+                "tags": ["Grupo"],
+                "summary": "Criar novo Grupo",
+                "description": "Rota para criar um novo Grupo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "CLT"
+                                     
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": { "description": "" },
+                "400": { "description": "Grupo já existe!" }
+    
+            }, "get": {
+                    "tags": ["Grupo"],
+                    "summary": "Listando todos os Grupo",
+                    "description": "Rotas para listar os Grupo",
+                    "responses": {
+                        "200": { "description": "" }
+                    }
+    
+                }
+            },
+                "/grupos/{id}":{
+                    "put": {
+                            "tags": ["Grupo"],
+                            "summary": "Atualizar Grupo",
+                            "description": "Rota para atualizar um Grupo",
+                            "parameters": [{"in": "path", "name": "id", "schema": {
+                                "type": "string"
+                            },
+                        "required": true
+                            }],
+                            "requestBody": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "example": {
+                                                "name": "PJ" 
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        },
+                    
+                        "responses": {
+                            "200": { "description": "" },
+                            "404": { "description": "Grupo não existe" },
+                            "400": { "description": "Request incorrect" }
+                        },
+                        "delete": {
+                            "tags": ["Grupo"],
+                            "summary": "Delete Grupo",
+                            "description": "Rota para apagr um Grupo epecificando o ID",
+                            "parameters": [{"in": "path", "name": "id", "schema": {
+                                "type": "string"
+                            },
+                                "required": true
+                            }],
+                            "responses": {
+                                "204": { "description": "Grupo apagado" },
+                                "404": { "description": "Grupo não existe"
+                                }
+                            }
+                        }
+                    },
+                     "/departamentos": {
+                        "post": {
+                            "tags": ["Departamento"],
+                            "summary": "Criar novo Departamento",
+                            "description": "Rota para criar um novo Departamento",
+                            "requestBody": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "example": {
+                                                "name": "Desenvolvimento"
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": { "description": "" },
+                            "400": { "description": "Departamento já existe!" }
+                    
+                        }, "get": {
+                                "tags": ["Departamento"],
+                                "summary": "Listando todos os Departamento",
+                                "description": "Rotas para listar os Departamento",
+                                "responses": {
+                                    "200": { "description": "" }
+                                }
+                            }
+                        
+                        },
+                        "/departamentos/{id}":{
+                                "put": {
+                                        "tags": ["Departamento"],
+                                        "summary": "Atualizar Departamento",
+                                        "description": "Rota para atualizar um Departamento",
+                                        "parameters": [{"in": "path", "name": "id", "schema": {
+                                            "type": "string"
+                                        },
+                                    "required": true
+                                        }],
+                                        "requestBody": {
+                                            "content": {
+                                                "application/json": {
+                                                    "schema": {
+                                                        "type": "object",
+                                                        "example": {
+                                                            "name": "Financeiro"  
+                                                        }
+                                                    }
+                                                }
+                                                
+                                            }
+                                        }
+                
+                                    },
+                                    "responses": {
+                                        "200": { "description": "" },
+                                        "404": { "description": "Departamento não existe" },
+                                        "400": { "description": "Request incorrect" }
+                
+                                    }, "delete": {
+                                        "tags": ["Departamento"],
+                                        "summary": "Delete Departamento",
+                                        "description": "Rota para apagr um Departamento epecificando o ID",
+                                        "parameters": [{"in": "path", "name": "id", "schema": {
+                                            "type": "string"
+                                        },
+                                            "required": true
+                                        }],
+                                        "responses": {
+                                            "204": { "description": "Departamento apagado" },
+                                            "404": { "description": "Departamento não existe" }
+                                        }
+                                    }
+                
+                        },      
+        
+                        "/colaborador": {
+                            "post": {
+                                "tags": ["Colaborador"],
+                                "summary": "Criar novo Colaborador",
+                                "description": "Rota para criar um novo colaborador",
+                                "requestBody": {
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "example": {
+                                                    "name": "Pedro Gomes Jr",
+                                                    "email": "pedrogomesjr0@gmail.com",
+                                                    "idade": "25",
+                                                    "senha": "jr6555@!.",
+                                                    "status": "ativo",
+                                                    "departamentos": [1],
+                                                    "grupo": "1",
+                                                    "paginas_r_sociais": "", 
+                                                    "description": "Engenheiro da computação" 
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                                "201": { "description": "" },
+                                "400": { "description": "Solicitação incorreta" },
+                                "400": { "description": "Colaborador já existe!" },
+                                "400": { "description": "Departamento já existe!" },
+                                "400": { "description": "grupo já existe!" }
+
+                            }, "get": {
+                                    "tags": ["Colaborador"],
+                                    "summary": "Listando todos os Colaboradores",
+                                    "description": "Rotas para listar os colaboradores",
+                                    "responses": {
+                                        "200": { "description": "colaboradores" }
+                                    }
+
+                                },"/colaborador/{name}":{
+                                    "get": {
+                                        "tags": ["Colaborador"],
+                                        "summary": "Lista apenas um colaborador",
+                                        "description": "Rotas para listar um colaborador",
+                                        "parameters": [{"in": "path", "name": "name", "schema": {
+                                            "type": "string"
+                                        },
+                                            "required": true
+                                        }],
+                                        "responses": {
+                                            "200": { "description": "" },
+                                            "404": { "description": "Colaborador não existe" }
+                                        }
+                                    }
+                                },"/colaborador/{id}":{
+                                        "put": {
+                                                "tags": ["Colaborador"],
+                                                "summary": "Atualizar Colaborador",
+                                                "description": "Rota para atualizar um colaborador",
+                                                "parameters": [{"in": "path", "name": "id", "schema": {
+                                                    "type": "string"
+                                                },
+                                            "required": true
+                                                }],
+                                                "requestBody": {
+                                                    "content": {
+                                                        "application/json": {
+                                                            "schema": {
+                                                                "type": "object",
+                                                                "example": {
+                                                                    "paginas_r_sociais": "https://www.linkedin.com/in/pedro-gomes-jr-b9026b201/"  
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            },
+                                            "responses": {
+                                                "200": { "description": "" },
+                                                "404": { "description": "Colaborador não existe" },
+                                                "400": { "description": "Request incorrect" }
+
+                                            }, "delete": {
+                                                "tags": ["Colaborador"],
+                                                "summary": "Delete Colaborador",
+                                                "description": "Rota para apagr um colaborador epecificando o ID",
+                                                "parameters": [{"in": "path", "name": "id", "schema": {
+                                                    "type": "string"
+                                                },
+                                                    "required": true
+                                                }],
+                                                "responses": {
+                                                    "204": { "description": "Colaborador apagado" },
+                                                    "404": { "description": "Colaborador não existe"
+                                                    }
+                                                }
+                                            }
+
+                            }              
+    }
+    }
+                                
+                            
+                        

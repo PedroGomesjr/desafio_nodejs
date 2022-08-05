@@ -7,10 +7,10 @@ const app = express()
 
 app.use(express.json())
 
-app.use("/api-documentation",
-  swaggerUiExpress.serve,
+app.use("/api-documentation",swaggerUiExpress.serve,
   swaggerUiExpress.setup(swaggerDocument)
 );
 
 app.use(routes)
 
+export default app;

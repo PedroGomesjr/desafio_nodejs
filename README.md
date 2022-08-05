@@ -9,7 +9,7 @@ onde poderá ser implementado na empresa para que todos os colaboradores possam 
 ao perfil dos colegas.
 # Diagrama de Entidade Relacionamento (DER)
 </br>
-![database relationship entity](./diagrama_de_entidade_relacionamento.png)
+<img src= "./diagrama_de_entidade_relacionamento.png"
 </br>
 
  ## 📋 Dependências utilizadas

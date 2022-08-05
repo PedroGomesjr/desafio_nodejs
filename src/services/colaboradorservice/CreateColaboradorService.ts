@@ -1,3 +1,4 @@
+import { hash } from "bcryptjs";
 import { Colaborador } from "../../entities/Colaborador";
 import { colaboradorRepositoy } from "../../repository/colaboradorRepository";
 import { departamentoRepository } from "../../repository/departamentoRepository";
@@ -25,7 +26,8 @@ export class CreateColaboradorService{
             paginas_r_sociais ,description}: ColaboradorResquest): Promise<Colaborador | Error>{
             
                 const repo =  colaboradorRepositoy()
-               
+
+               // Ifs de verificação, para não criar um colaborador que já exista e nem adcione um departamento e colaborador que não existam:
                 if(await repo.findOne({name})){
                     return new Error("Colaborador já existe!");
                 }
@@ -37,11 +39,14 @@ export class CreateColaboradorService{
                 if(!existsgrupo){
                     return new Error("Grupo Não existe!");
                 }
-    
-                const colaborador = repo.create({id, name, email, idade, senha, status, departamentos:existsDepartamento, grupo:existsgrupo, paginas_r_sociais, description });
+
+                const passwordHash = await hash(senha, 8);// Encripitar senha
+                const colaborador = repo.create({id, name, email, idade, senha:passwordHash, status, departamentos:existsDepartamento, grupo:existsgrupo, paginas_r_sociais, description });
                 
                 await repo.save(colaborador);
+
                 
+
                 return colaborador;
     }
 }
